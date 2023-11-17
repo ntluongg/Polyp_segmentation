@@ -13,6 +13,9 @@ def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 install("segmentation_models_pytorch")
+
+import segmentation_models_pytorch
+
 # Set device type
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
