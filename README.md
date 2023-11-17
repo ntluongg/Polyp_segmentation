@@ -3,10 +3,13 @@ First you need to use Kaggle notebook with GPU T4 x2 because this model is "data
 
 ## On kaggle:
 ```python
-!pip install kaggle
-#!kaggle datasets download -d imnotluong/unetpp67 #for 0.67 model
-#better one: 0.74
-!kaggle datasets download -d imnotluong/unetplusplus
+!pip install gdown
+```
+```python
+import gdown
+#latest model: 0.74 point
+url = 'https://drive.google.com/uc?export=download&id=11pIkiEQkJXYxiSR5xHBj09KGmIPtDObh'
+gdown.download(url, 'unet_model.pth', quiet=False)
 ```
 ```python
 !git clone https://github.com/ntluongg/Polyp_segmentation.git
