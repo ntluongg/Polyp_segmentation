@@ -23,7 +23,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = segmentation_models_pytorch.UnetPlusPlus(encoder_name="resnet101", encoder_weights="imagenet", in_channels=3, classes=3)
 
 model.to(device)
-
+model = nn.DataParallel(model)
 # Load the checkpoint
 parser = argparse.ArgumentParser(description='Polyp Segmentation Inference')
 parser.add_argument('--checkpoint', type=str, help='Path to the model checkpoint')
