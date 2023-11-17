@@ -8,6 +8,7 @@ import pandas as pd
 from albumentations.pytorch.transforms import ToTensorV2
 import albumentations as A
 import argparse
+import torch.nn as nn
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
